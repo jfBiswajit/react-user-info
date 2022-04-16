@@ -1,11 +1,13 @@
 import Input from './Input';
 import Button from './Button';
 import Card from '../UI/Card';
+import Modal from '../UI/Modal';
 import { useState } from 'react';
 
 export default function AddNewUser({ onAddNewUser }) {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
+  const [errMsg, setErrMsg] = useState('');
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -13,12 +15,12 @@ export default function AddNewUser({ onAddNewUser }) {
     const userAge = age.trim();
 
     if (!userName || !userAge) {
-      console.log('Please fill all the required field!');
+      setErrMsg('Please fill all the required field!');
       return;
     }
 
     if (userAge < 1) {
-      console.log('Invalid age');
+      setErrMsg('Please enter valid age!');
       return;
     }
 
@@ -33,6 +35,10 @@ export default function AddNewUser({ onAddNewUser }) {
 
   const onUserAgeChangeHandler = (event) => {
     setAge(event.target.value);
+  };
+
+  const dismissModal = () => {
+    setErrMsg('');
   };
 
   return (
@@ -54,6 +60,8 @@ export default function AddNewUser({ onAddNewUser }) {
         />
         <Button type='submit' name='Add User' />
       </form>
+
+      {errMsg && <Modal onDismissModal={dismissModal} msg={errMsg} />}
     </Card>
   );
 }

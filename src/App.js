@@ -1,6 +1,5 @@
 import AddNewUser from './components/NewUser/AddNewUser';
 import Users from './components/UsersList/Users';
-import Modal from './components/UI/Modal';
 import classes from './App.module.css';
 import { useState } from 'react';
 
@@ -18,7 +17,6 @@ function App() {
     <div className={classes.container}>
       <AddNewUser onAddNewUser={onAddNewUser} />
       <Users users={users} />
-      {/* <Modal/> */}
     </div>
   );
 }

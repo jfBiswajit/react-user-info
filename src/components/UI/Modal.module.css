@@ -16,7 +16,7 @@
   position: relative;
   width: 500px;
   max-width: 90%;
-  background: #fff;
+  background: rgba(255, 0, 0, 0.544);
   padding: 1em 2em;
   text-align: center;
 }
