@@ -1,10 +1,10 @@
 import Input from './Input';
 import Button from './Button';
-import './Form.css';
+import classes from './Form.module.css';
 
 export default function Form() {
   return (
-    <form>
+    <form className={classes.form}>
       <Input />
       <Input />
       <Button />

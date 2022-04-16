@@ -1,9 +1,9 @@
 import Form from './components/NewUser/Form';
-import './App.css';
+import classes from './App.module.css';
 
 function App() {
   return (
-    <div id='app'>
+    <div className={classes.container}>
       <Form />
     </div>
   );
