@@ -1,13 +1,15 @@
 import Card from '../UI/Card';
 import classes from './Users.module.css';
 
-export default function Users() {
+export default function Users({ users }) {
   return (
     <Card>
-      <div className={classes.item}>Item</div>
-      <div className={classes.item}>Item</div>
-      <div className={classes.item}>Item</div>
-      <div className={classes.item}>Item</div>
+      {users.map((user) => (
+        <div
+          key={user.id}
+          className={classes.item}
+        >{`${user.name} (${user.age})`}</div>
+      ))}
     </Card>
   );
 }
