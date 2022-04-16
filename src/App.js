@@ -1,4 +1,4 @@
-import Form from './components/NewUser/Form';
+import AddNewUser from './components/NewUser/AddNewUser';
 import Users from './components/UsersList/Users';
 import Modal from './components/UI/Modal';
 import classes from './App.module.css';
@@ -6,7 +6,7 @@ import classes from './App.module.css';
 function App() {
   return (
     <div className={classes.container}>
-      <Form />
+      <AddNewUser />
       <Users/>
       {/* <Modal/> */}
     </div>

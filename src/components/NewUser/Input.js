@@ -1,10 +1,10 @@
 import classes from './Input.module.css';
 
-export default function Input({label, type, placeholder}) {
+export default function Input({label, type, placeholder, inputChangeHanler}) {
   return (
     <div>
       <label>{label}</label>
-      <input type={type} placeholder={placeholder} />
+      <input onChange={inputChangeHanler} type={type} placeholder={placeholder} />
     </div>
   );
 }
